@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-background-1: hsla(170, 55%, 85%, 1);   /* light green */
+  --color-background-2: hsla(183, 100%, 20%, .9); /* dark green */
+  --color-background-3: hsla(170, 68%, 45%, .9);  /* mint green */
+  --color-background-4: hsla(170, 50%, 100%, .9);  /* white green */
+  --color-background-5: hsla(170, 20%, 90%, .9);  /* light green gray */
+
+  --color-text-1: hsla(170, 50%, 100%, .9); /* white green */
+  --color-text-2: hsla(183, 900%, 15%, .9); /* dark green */
+
+  --box-shadow:   hsla(183, 900%, 15%, .4) 0px 4px 7px,
+                  hsla(183, 900%, 15%, .5) 0px 4px 7px;
+  --box-shadow-buttons:   hsla(183, 900%, 15%, .4) 0px 3px 3px,
+                          hsla(183, 900%, 15%, .5) 0px 3px 3px;
+
+  --box-shadow-reset: hsla(183, 900%, 15%, .5) 3px 3px 6px 0px inset,
+                      hsla(183, 900%, 15%, .5) -3px -3px 6px 1px inset;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: var(--color-text-1);
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-family: sans-serif;
+  color: var(--color-text-1);
+}
+
+h3 {
+  font-size: 1rem;
+  font-family: monospace;
+  color: var(--color-text-2);
+}
+
+h4 {
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: var(--color-text-1);
+}
+
+p {
+  font-size: 1.25rem;
+  font-family: sans-serif;
+  color: var(--color-text-2);
+}
+
+body {
+  background-color: var(--color-background-1);
+}
+
+
+.container {
+  background-color: var(--color-background-4);
+  border-radius: 15px;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  grid-gap: 25px;
+  grid-template-areas: "input output";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -187px;
+  margin-left: -375px;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}
+
+.input-side {
+  border-radius: 10px;
+  background-color: var(--color-background-4);
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  grid-area: "input";
+  float: left;
+  display: grid;
+}
+
+.input-side h3 {
+  margin: 0 0 0 5px;
+}
+
+.bill {
+  background-color: var(--color-background-4);
+  width: 300px;
+  height: 20px;
+}
+
+input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--color-background-5);
+  text-align: right;
+  padding: 8px;
+  border-radius: 15px;
+  margin: 5px 0 0 0;
+  color: var(--color-text-2);
+  content: '$' ;
+  border: 0;
+}
+
+.select-tip {
+  background-color: var(--color-background-4);
+  margin: 50px 0 0 0;
+}
+
+.select-tip-buttons {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  grid-gap: 10px;
+  border-radius: 2px solid purple;
+  margin: 10px 0 0 0;
+
+}
+
+.percent-button {
+  background-color: var(--color-background-2);
+  border-radius: 10px;
+  height: 40px;
+  width: 80px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: var(--box-shadow-buttons);
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+}
+
+.percent-button:hover {
+  background-color: var(--color-background-3);
+  transition-delay: 50ms;
+  color: var(--color-text-2);
+  cursor: pointer;
+}
+
+.number-people {
+  margin: 20px 0 0 0;
+  bottom: 10px;
+  display: grid;
+  grid-template: 1fr / 1fr 5fr;
+  grid-template-areas:  "title title"
+                        "icon input"
+}
+
+.number-people h3 {
+  grid-area: title;
+}
+
+.number-bar {
+  background-color: var(--color-background-5);
+  text-align: right;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 5px 0 0 0;
+  grid-area: input;
+}
+
+.icon-people {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  grid-area: icon;
+  margin: 8px 0 0 0;
+  background-image: url(/Users/Eric/Documents/Code/tip-calculator-app-main/images/icon-person.svg);
+}
+
+/* !!!!! output starts here !!!!! */
+/* !!!!! output starts here !!!!! */
+
+.output-side {
+  border-radius: 10px;
+  background-color: var(--color-background-2);
+  width: 250px;
+  height: 250px;
+  padding: 35px;
+  display: grid;
+  grid-area: "output";
+  justify-content: center;
+  align-content: space-between;
+  box-shadow: var(--box-shadow-reset);
+}
+
+.tip-amount {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  grid-template-areas: "text total";
+  width: 250px;
+}
+
+.tip-amount h4 {
+  grid-area: "text";
+}
+
+.tip-amount h1 {
+  grid-area: "total";
+  text-align: center;
+  padding: 5px;
+}
+
+.total {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  grid-template-areas: "text1 total1";
+}
+
+.total h4 {
+  grid-area: "text1";
+}
+
+.total h1 {
+  grid-area: "total1";
+  text-align: center;
+  padding: 5px;
+}
+
+.reset-button {
+  background-color: var(--color-background-3);
+  display: grid;
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-buttons);
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: var(--color-background-2);
+}
+
+.reset-button h4 {
+  font-size: 1.5rem;
+  color: var(--color-text-1);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

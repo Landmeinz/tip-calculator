@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="calc.js" charset="UTF-8"></script>
+
+  <title>Tip calculator</title>
+
+</head>
+<body>
+  <div class="container">
+    <div class="input-side">
+      <div class="bill">
+        <h3>Bill</h3>
+        <input type="text" name="cost" value="">
+      </div>
+      <div class="select-tip">
+        <h3>Select Tip %</h3>
+          <div class="select-tip-buttons">
+            <button type="button" name="5%"> <h2 class="percent-button">5%</h2> </button>
+            <button type="button" name="10%"> <h2 class="percent-button">10%</h2> </button>
+            <button type="button" name="15%"> <h2 class="percent-button">15%</h2> </button>
+            <button type="button" name="18%"> <h2 class="percent-button">18%</h2> </button>
+            <button type="button" name="20%"> <h2 class="percent-button">20%</h2> </button>
+            <button type="button" name="25%"> <h2 class="percent-button">25%</h2> </button>
+          </div>
+      </div>
+      <div class="number-people">
+        <h3>Number of People</h3>
+        <div class="icon-people"></div>
+        <input type="text" name="cost" value="1">
+      </div>
+    </div>
+
+    <div class="output-side">
+      <div class="tip-amount">
+        <h4>  Tip Amount <br>
+          / person</h4>
+        <h1 >$7.85</h1>
+      </div>
+      <div class="total">
+        <h4>  Total <br>
+          / person</h4>
+        <h1 class="total-text">$67.85</h1>
+      </div>
+      <div class="reset-button">
+        <button type="button" name="reset"> <h2 class="reset-button">Reset</h2> </button> 
+      </div>
+    </div>
+  </div>
+</body>
+</html>
