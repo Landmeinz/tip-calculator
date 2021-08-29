@@ -18,7 +18,7 @@
   --box-shadow-buttons:   hsla(183, 900%, 15%, .4) 0px 3px 3px,
                           hsla(183, 900%, 15%, .5) 0px 3px 3px;
 
-  --box-shadow-reset: hsla(183, 900%, 15%, .5) 3px 3px 6px 0px inset,
+  --box-shadow-output: hsla(183, 900%, 15%, .5) 3px 3px 6px 0px inset,
                       hsla(183, 900%, 15%, .5) -3px -3px 6px 1px inset;
 }
 
@@ -90,40 +90,46 @@ body {
   margin: 0 0 0 5px;
 }
 
-.bill {
+.bill input {
   background-color: var(--color-background-4);
   width: 300px;
-  height: 20px;
-}
-
-input[type=text] {
-  width: 100%;
+  height: 30px;
   box-sizing: border-box;
   background-color: var(--color-background-5);
   text-align: right;
-  padding: 8px;
   border-radius: 15px;
-  margin: 5px 0 0 0;
+  margin: 10px 0 0 0;
   color: var(--color-text-2);
-  content: '$' ;
   border: 0;
+  padding: 0 15px 0 0;
 }
 
 .select-tip {
   background-color: var(--color-background-4);
-  margin: 50px 0 0 0;
+  margin: 10px 0 0 0;
 }
 
 .select-tip-buttons {
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 15px;
   border-radius: 2px solid purple;
   margin: 10px 0 0 0;
 
 }
 
-.percent-button {
+.select-tip-buttons button {
+  background-color: var(--color-background-2);
+  border-radius: 10px;
+  height: 45px;
+  width: 85px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow-buttons);
+}
+
+/*.percent-button {
   background-color: var(--color-background-2);
   border-radius: 10px;
   height: 40px;
@@ -133,6 +139,12 @@ input[type=text] {
   align-items: center;
   padding: 5px;
   box-shadow: var(--box-shadow-buttons);
+}*/
+.select-tip-buttons button:hover {
+  background-color: var(--color-background-3);
+  transition-delay: 50ms;
+  color: var(--color-text-2);
+  cursor: pointer;
 }
 
 button {
@@ -140,20 +152,32 @@ button {
   border-radius: 10px;
 }
 
-.percent-button:hover {
+/*.percent-button:hover {
   background-color: var(--color-background-3);
   transition-delay: 50ms;
   color: var(--color-text-2);
   cursor: pointer;
-}
+}*/
 
 .number-people {
-  margin: 20px 0 0 0;
-  bottom: 10px;
+  margin: 15px 0 0 0;
   display: grid;
   grid-template: 1fr / 1fr 5fr;
   grid-template-areas:  "title title"
                         "icon input"
+}
+
+.number-people input {
+  box-sizing: border-box;
+  background-color: var(--color-background-5);
+  text-align: right;
+  padding: 8px;
+  border-radius: 15px;
+  margin: 5px 0 0 0;
+  color: var(--color-text-2);
+  content: '$' ;
+  border: 0;
+  padding: 0 15px 0 0;
 }
 
 .number-people h3 {
@@ -191,7 +215,7 @@ button {
   grid-area: "output";
   justify-content: center;
   align-content: space-between;
-  box-shadow: var(--box-shadow-reset);
+  box-shadow: var(--box-shadow-output);
 }
 
 .tip-amount {
@@ -203,6 +227,7 @@ button {
 
 .tip-amount h4 {
   grid-area: "text";
+  font-family: monospace;
 }
 
 .tip-amount h1 {
@@ -219,6 +244,7 @@ button {
 
 .total h4 {
   grid-area: "text1";
+  font-family: monospace;
 }
 
 .total h1 {
@@ -228,6 +254,14 @@ button {
 }
 
 .reset-button {
+  /* background-color: var(--color-background-3); */
+  display: grid;
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.reset-button button {
   background-color: var(--color-background-3);
   display: grid;
   text-align: center;
@@ -237,13 +271,8 @@ button {
   cursor: pointer;
 }
 
-.reset-button:hover {
+.reset-button button:hover {
   background-color: var(--color-background-2);
-}
-
-.reset-button h4 {
-  font-size: 1.5rem;
-  color: var(--color-text-1);
 }
 
 .attribution {
