@@ -39,4 +39,3 @@ console.log('connected');
 //
 // function calcFunction() {
 //   document.getElementById("demo").innerHTML = 'yes';
-// }
